@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/styles.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{% url 'home' %}">ARTA</a>
+        <a href="{% url 'projects' %}">Projects</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="overlay">
+            <h1 class="hero-title">Portfolio</h1>
+            <p class="hero-subtitle"><span id="typing-text">TECH ENTHUSIAST</span></p>
+            <p class="hero-text">Welcome to my creative world! Let’s build something amazing together.</p>
+        </div>
+    </header>
+
+ 
+       
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <!-- Left Side - Contact Info -->
+        <div class="contact-info">
+            <h2>Let's Work Together</h2>
+            <p>10000, Prishtine Kosovo</p>
+            <p><a href="mailto:info@arta.com">arta.com</a></p>
+            <p>Tel: 123-456-7890</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Right Side - Contact Form -->
+        <div class="contact-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <input type="text" name="first-name" placeholder="First Name *" required>
+                    <input type="text" name="last-name" placeholder="Last Name *" required>
+                </div>
+                <input type="email" name="email" placeholder="Email *" required>
+                <textarea name="message" placeholder="Leave us a message..." required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025. All rights reserved.</p>
+</footer>
+
+
+
+    <!-- JavaScript for Typing Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let textElement = document.getElementById("typing-text");
+            let text = "TECH ENTHUSIAST";
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    textElement.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, 100);
+                }
+            }
+
+            textElement.innerHTML = ""; // Clears text before typing animation starts
+            type();
+        });
+    </script>
+
+</body>
+</html>
